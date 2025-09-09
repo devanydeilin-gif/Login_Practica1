@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      width: 100%;
+      max-width: 600px;
+      animation: fadeIn 1s ease-in-out;
+      overflow-x: auto; /* scroll horizontal si se necesita */
+    }
+
+    h1 {
+      text-align: center;
+      color: #ff6f61;
+      margin-bottom: 20px;
+      font-size: clamp(1.5rem, 4vw, 2.2rem); /* tamaño adaptable */
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 12px;
+      overflow: hidden;
+      min-width: 350px; /* asegura que no se rompa en pantallas muy chicas */
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+      font-size: clamp(0.9rem, 2vw, 1rem);
+    }
+
+    th {
+      background: linear-gradient(135deg, #ff6f61, #ffb347);
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background: #ffe0e0;
+    }
+
+    tr:nth-child(odd) {
+      background: #fff5e6;
+    }
+
+    tr:hover {
+      background: #ffd6d6;
+      cursor: pointer;
+      transform: scale(1.01);
+      transition: 0.2s;
+    }
+
+    td {
+      border-bottom: 1px solid #f3c5c5;
+      color: #333;
+      font-weight: 500;
+    }
+
+    /* Animación */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 📱 Ajustes en pantallas pequeñas */
+    @media (max-width: 480px) {
+      .card {
+        padding: 15px;
+      }
+
+      th, td {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>Usuarios</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Password</th>
+        </tr>
+      </thead>
+      <tbody id="user_table">
+        <tr>
+          <td>usuario1</td>
+          <td>1234</td>
+        </tr>
+        <tr>
+          <td>usuario2</td>
+          <td>abcd</td>
+        </tr>
+        <tr>
+          <td>usuario3</td>
+          <td>qwerty</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+  <script src="../Js/local_storage.js"></script>
+</body>
+</html>
